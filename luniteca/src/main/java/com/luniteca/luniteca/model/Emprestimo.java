@@ -1,8 +1,12 @@
 package com.luniteca.luniteca.model;
 
+
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -14,8 +18,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "tb_emprestimo")
 public class Emprestimo {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+
 	@UpdateTimestamp
-	private Date data = new java.sql.Date(System.currentTimeMillis());
+	private Date dataEmprestimo = new java.sql.Date(System.currentTimeMillis());
 	
 	@ManyToOne
 	@JsonIgnoreProperties("emprestimo")
@@ -24,13 +32,22 @@ public class Emprestimo {
 	@ManyToOne
 	@JsonIgnoreProperties("emprestimo")
 	private Usuario usuario;
+	
 
-	public Date getData() {
-		return data;
+	public long getId() {
+		return id;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Date getDataEmprestimo() {
+		return dataEmprestimo;
+	}
+
+	public void setDataEmprestimo(Date dataEmprestimo) {
+		this.dataEmprestimo = dataEmprestimo;
 	}
 
 	public Livro getLivro() {
@@ -48,7 +65,7 @@ public class Emprestimo {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
-
-
+	
+	
+	
 }

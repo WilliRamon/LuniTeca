@@ -12,13 +12,16 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
 @Entity
 @Table(name = "tb_livro")
 public class Livro {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -34,7 +37,7 @@ public class Livro {
 	@Size(max = 45, message = "O atributo autor deve conter no máximo 100 caracteres")
 	private String autor;
 	
-	@NotBlank(message = "O atributo codigo é obrigatório e não pode utilizar espações em branco")
+	@NotNull(message = "O atributo codigo é obrigatório e não pode utilizar espações em branco")
 	@Column(unique=true)
 	private long codigo;
 	
@@ -111,6 +114,5 @@ public class Livro {
 	public void setEmprestimo(List<Emprestimo> emprestimo) {
 		this.emprestimo = emprestimo;
 	}
-
 
 }

@@ -17,6 +17,7 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario {
@@ -116,5 +117,6 @@ public class Usuario {
 	public void setEmprestimo(List<Emprestimo> emprestimo) {
 		this.emprestimo = emprestimo;
 	}
+
 	
 }
