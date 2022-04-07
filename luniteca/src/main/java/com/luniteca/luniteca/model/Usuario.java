@@ -34,7 +34,7 @@ public class Usuario {
 	@Size(max = 100, message = "O atributo endereco deve conter no máximo 100 caracteres")
 	private String endereco;
 	
-	@NotBlank(message = "O atributo cpf é obrigatório e não pode utilizar espações em branco")
+	@NotNull(message = "O atributo cpf é obrigatório e não pode utilizar espações em branco")
 	@Column(unique=true)
 	private long cpf; 
 	

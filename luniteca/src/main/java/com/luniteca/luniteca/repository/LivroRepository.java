@@ -16,6 +16,6 @@ public interface LivroRepository extends JpaRepository<Livro, Long>{
 	
 	public List<Livro> findAllByAutorContainingIgnoreCase (String autor);
 	
-	/*public Livro findByCodigo (Integer codigo);*/
+	public Livro findByCodigo (Long codigo);
 }
  

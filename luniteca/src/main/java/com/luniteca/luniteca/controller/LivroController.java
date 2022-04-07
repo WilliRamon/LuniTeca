@@ -54,10 +54,10 @@ public class LivroController {
 		return ResponseEntity.ok(livroRepository.findAllByAutorContainingIgnoreCase(autor));
 	}
 	
-	/*@GetMapping("/codigo/{codigo}")
-	private ResponseEntity<Livro> getByCodigo(@PathVariable int codigo){
+	@GetMapping("/codigo/{codigo}")
+	private ResponseEntity<Livro> getByCodigo(@PathVariable long codigo){
 		return ResponseEntity.ok(livroRepository.findByCodigo(codigo));
-	}*/
+	}
 	
 	@PostMapping
 	public ResponseEntity<Livro> postLivro(@Valid @RequestBody Livro livro){
