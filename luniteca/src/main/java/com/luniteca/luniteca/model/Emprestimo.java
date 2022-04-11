@@ -25,6 +25,9 @@ public class Emprestimo {
 	@UpdateTimestamp
 	private Date dataEmprestimo = new java.sql.Date(System.currentTimeMillis());
 	
+	@UpdateTimestamp
+	private Date dataDevolucao;
+	
 	@ManyToOne
 	@JsonIgnoreProperties("emprestimo")
 	private Livro livro;
