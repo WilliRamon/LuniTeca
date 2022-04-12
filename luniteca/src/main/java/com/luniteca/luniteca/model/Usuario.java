@@ -53,6 +53,23 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Emprestimo> emprestimo;
+	
+	
+	//Método construtor com atributos para testes
+
+	public Usuario(long id, String nome, String endereco, long cpf, String email, String senha, String tipo) {
+		this.id = id;
+		this.nome = nome;
+		this.endereco = endereco;
+		this.cpf = cpf;
+		this.email = email;
+		this.senha = senha;
+		this.tipo = tipo;
+	}
+	
+	//Método construtor SEM atributos para testes
+	public Usuario() { }
+
 
 	public long getId() {
 		return id;
