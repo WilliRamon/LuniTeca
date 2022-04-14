@@ -36,6 +36,16 @@ public class Emprestimo {
 	@JsonIgnoreProperties("emprestimo")
 	private Usuario usuario;
 	
+	
+	public Emprestimo(long id, Date dataDevolucao) {
+		this.id = id;
+		this.dataDevolucao = dataDevolucao;
+	}
+	
+	//Método construtor SEM atributos para testes
+	public Emprestimo() { }
+
+	
 
 	public long getId() {
 		return id;
